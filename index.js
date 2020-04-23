@@ -33,6 +33,8 @@ Spider.prototype = {
 	},
 
 	queue: function(url, done) {
+		url = encodeURI(url)
+		
 		if (this.visited[url]) return;
 
 		if (!this.opts.allowDuplicates) {
